@@ -8,7 +8,6 @@ const borrowRoutes = require("./routes/borrow");
 const historyRoutes = require("./routes/history");
 const userRoutes = require("./routes/users"); // if file is routes/users.js
 
-
 dotenv.config();
 
 const app = express();
@@ -25,7 +24,9 @@ app.use("/api/books", bookRoutes);
 app.use("/api/borrow", borrowRoutes);
 app.use("/api/history", historyRoutes);
 app.use("/api/users", userRoutes);
-
+app.get("/", (req, res) => {
+  res.send("📦 Backend is running on Vercel!");
+});
 
 // Routes will go here later
 
